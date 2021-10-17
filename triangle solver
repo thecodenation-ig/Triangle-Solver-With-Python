@@ -1,0 +1,79 @@
+import math as m
+
+print("Made By @thefactnationn")
+
+def triangle():
+    choice_list = {
+        'Area' : 'a',
+        'Third Angle' : 't',
+        'Perimeter' : 'p',
+        'Hypotenuse Solver' : 'h'
+    }
+
+    for keys in range(1):
+        print(choice_list)
+
+    def findthirdangoftriangle():
+        angle1 = int(input("Angle1: "))
+        angle2 = int(input("Angle2: "))
+        result = 180 - (angle1 + angle2)
+        print(result)
+
+    def areaoftriangle():
+        base = int(input("Base: "))
+        height = int(input("Height: "))
+        area = base * height / 2
+        print(area)
+
+    def triangle_solver_hypotenuse():
+        find_list = ["Base", "Hypotenuse", "Altitude"]
+        print(find_list)
+        choiice = input("What do you wanna find?(use lowercase letters): ")
+
+        if choiice == "h":
+            b1 = int(input("Base: "))
+            a1 = int(input("Altitude: "))
+
+            hypotenuse_former = b1 * b1 + a1 * a1
+            hypotenuse = m.sqrt(hypotenuse_former)
+            print(hypotenuse)
+
+        if choiice == "b":
+            h1 = int(input("Hypo: "))
+            a2 = int(input("Altitude: "))
+
+            base_former = h1 * h1 - a2 * a2
+            base = m.sqrt(base_former)
+            print(base)
+
+        if choiice == "a":
+            h2 = int(input("Hypo: "))
+            b2 = int(input("Base: "))
+
+            alt_former = h2 * h2 - b2 * b2
+            alt = m.sqrt(alt_former)
+            print(alt)
+
+    def perimeteroftriangle():
+        side1 = int(input("Side: "))
+        height = int(input("Height: "))
+        side2 = int(input("Side: "))
+        perimeter = side1 + height + side2
+        print(perimeter)
+
+    choice = input("What do u wanna solve?: ")
+
+    if choice == "t":
+        findthirdangoftriangle()
+
+    elif choice == "h":
+        triangle_solver_hypotenuse()
+
+    elif choice == "a":
+        areaoftriangle()
+
+    elif choice == "p":
+        perimeteroftriangle()
+
+while True:
+    triangle()
